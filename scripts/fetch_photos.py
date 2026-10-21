@@ -17,6 +17,7 @@ import urllib.request
 from pathlib import Path
 
 API = "https://en.wikipedia.org/w/api.php"
+COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "IcelandApp/1.0 (https://github.com/PeterPanSwift/Iceland-App; demo build)"
 WIDTH = 1280
 OUT_DIR = Path(__file__).resolve().parent.parent / "IcelandApp" / "Photos"
@@ -82,9 +83,9 @@ def get(url, attempts=4):
             time.sleep(2 ** (attempt + 1))
 
 
-def api(**params):
+def api(endpoint=API, **params):
     params.update(format="json", formatversion="2")
-    return json.loads(get(API + "?" + urllib.parse.urlencode(params)))
+    return json.loads(get(endpoint + "?" + urllib.parse.urlencode(params)))
 
 
 def lead_image(title):
@@ -99,6 +100,7 @@ def strip_html(value):
 
 def image_info(filename):
     data = api(
+        COMMONS_API,
         action="query",
         titles="File:" + filename,
         prop="imageinfo",
@@ -106,7 +108,7 @@ def image_info(filename):
         iiurlwidth=str(WIDTH),
     )
     pages = data.get("query", {}).get("pages", [])
-    if not pages or pages[0].get("missing") or "imageinfo" not in pages[0]:
+    if not pages or "imageinfo" not in pages[0]:
         return None
     info = pages[0]["imageinfo"][0]
     meta = info.get("extmetadata", {})

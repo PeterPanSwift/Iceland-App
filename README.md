@@ -27,4 +27,6 @@ open IcelandApp.xcodeproj
 
 `.github/workflows/record-demo.yml` 在 GitHub 的 `xcode-27` runner 上以 Xcode 27 建置 App，
 開啟 iPhone 18 Pro Max 模擬器，透過 `simctl io recordVideo` 錄下 `AppTourUITests` 的自動操作，
-並將原始影片與時間標記（`marks.json`，用來裁掉 App 以外的畫面）推送到 `recordings` 分支。
+並將原始影片與時間標記（`marks.json`）推送到 `recordings` 分支。
+
+之後執行 `python3 scripts/edit_video.py <錄影資料夾> demo.mp4`：依時間標記裁掉 App 以外的畫面、縮短靜止等待的片段，並壓縮成 1280p H.264。

@@ -9,21 +9,20 @@ struct MapScreen: View {
 
     @State private var position = MapScreen.overview
     @State private var selectedID: String?
+    // The map is only kept alive while its tab is on screen so it stops rendering in the background.
+    @State private var isVisible = false
 
     var body: some View {
         NavigationStack {
-            Map(position: $position, selection: $selectedID) {
-                ForEach(Place.all) { place in
-                    Marker(place.name, systemImage: place.category.symbol, coordinate: place.coordinate)
-                        .tint(place.category.color)
-                        .tag(place.id)
+            Group {
+                if isVisible {
+                    map
+                } else {
+                    Theme.deepBlue.ignoresSafeArea()
                 }
             }
-            .mapStyle(.hybrid(elevation: .realistic))
-            .mapControls {
-                MapCompass()
-                MapScaleView()
-            }
+            .onAppear { isVisible = true }
+            .onDisappear { isVisible = false }
             .safeAreaInset(edge: .bottom) { cards }
             .onChange(of: selectedID) { _, id in
                 guard let place = Place.all.first(where: { $0.id == id }) else { return }
@@ -48,6 +47,21 @@ struct MapScreen: View {
             .navigationDestination(for: Place.self) { place in
                 PlaceDetailView(place: place)
             }
+        }
+    }
+
+    private var map: some View {
+        Map(position: $position, selection: $selectedID) {
+            ForEach(Place.all) { place in
+                Marker(place.name, systemImage: place.category.symbol, coordinate: place.coordinate)
+                    .tint(place.category.color)
+                    .tag(place.id)
+            }
+        }
+        .mapStyle(.hybrid(elevation: .realistic))
+        .mapControls {
+            MapCompass()
+            MapScaleView()
         }
     }
 

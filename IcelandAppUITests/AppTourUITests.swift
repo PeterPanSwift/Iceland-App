@@ -21,7 +21,7 @@ final class AppTourUITests: XCTestCase {
         pause(2.5)
 
         // Explore: featured carousel
-        let carousel = element("featuredCarousel")
+        let carousel = app.scrollViews["featuredCarousel"]
         if carousel.waitForExistence(timeout: 5) {
             carousel.swipeLeft(velocity: .slow)
             pause(1.4)
@@ -94,7 +94,7 @@ final class AppTourUITests: XCTestCase {
     // MARK: - Helpers
 
     private func element(_ identifier: String) -> XCUIElement {
-        app.descendants(matching: .any).matching(identifier: identifier).firstMatch
+        app.buttons[identifier].firstMatch
     }
 
     private func pause(_ seconds: TimeInterval) {
