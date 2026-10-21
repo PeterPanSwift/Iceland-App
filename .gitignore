@@ -4,3 +4,4 @@ DerivedData/
 recording/
 .DS_Store
 IcelandApp/Info.plist
+__pycache__/
