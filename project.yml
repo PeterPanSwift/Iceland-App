@@ -1,0 +1,52 @@
+name: IcelandApp
+options:
+  bundleIdPrefix: com.peterpanswift
+  deploymentTarget:
+    iOS: "18.0"
+  developmentLanguage: zh-Hant
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  IcelandApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: IcelandApp
+    info:
+      path: IcelandApp/Info.plist
+      properties:
+        CFBundleDisplayName: 冰島之旅
+        CFBundleDevelopmentRegion: zh-Hant
+        CFBundleLocalizations: [zh-Hant, en]
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.peterpanswift.IcelandApp
+        TARGETED_DEVICE_FAMILY: "1"
+  IcelandAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: IcelandAppUITests
+    dependencies:
+      - target: IcelandApp
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.peterpanswift.IcelandAppUITests
+        TEST_TARGET_NAME: IcelandApp
+schemes:
+  IcelandApp:
+    build:
+      targets:
+        IcelandApp: all
+        IcelandAppUITests: [test]
+    test:
+      targets:
+        - IcelandAppUITests

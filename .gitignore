@@ -1,0 +1,6 @@
+*.xcodeproj/
+build/
+DerivedData/
+recording/
+.DS_Store
+IcelandApp/Info.plist
