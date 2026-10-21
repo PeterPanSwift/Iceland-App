@@ -1,0 +1,74 @@
+{
+  "hallgrimskirkja": {
+    "file": "Hallgrímskirkja Reykjavík.jpg",
+    "artist": "Mattias Hill",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Hallgr%C3%ADmskirkja_Reykjav%C3%ADk.jpg"
+  },
+  "thingvellir": {
+    "file": "Þingvellir_from_the_information_centre.JPG",
+    "artist": "Ivan Sabljak",
+    "license": "CC BY-SA 3.0",
+    "url": "https://commons.wikimedia.org/wiki/File:%C3%9Eingvellir_from_the_information_centre.JPG"
+  },
+  "strokkur": {
+    "file": "Strokkur Eruption.JPG",
+    "artist": "ConTheJedi",
+    "license": "CC0",
+    "url": "https://commons.wikimedia.org/wiki/File:Strokkur_Eruption.JPG"
+  },
+  "gullfoss": {
+    "file": "Gullfoss, Suðurland, Islandia, 2014-08-16, DD 119.JPG",
+    "artist": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Gullfoss,_Su%C3%B0urland,_Islandia,_2014-08-16,_DD_119.JPG"
+  },
+  "seljalandsfoss": {
+    "file": "Seljalandsfoss (16467797491).jpg",
+    "artist": "sergejf",
+    "license": "CC BY-SA 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Seljalandsfoss_(16467797491).jpg"
+  },
+  "skogafoss": {
+    "file": "Skogafoss waterfall - Iceland - Landscape photography (34692750741).jpg",
+    "artist": "Giuseppe Milo from Dublin, Ireland",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Skogafoss_waterfall_-_Iceland_-_Landscape_photography_(34692750741).jpg"
+  },
+  "reynisfjara": {
+    "file": "Reynisfjara and Reynisdrangar, Iceland.jpg",
+    "artist": "Martin Falbisoner",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Reynisfjara_and_Reynisdrangar,_Iceland.jpg"
+  },
+  "jokulsarlon": {
+    "file": "Jökulsárlón glacier lagoon, Iceland, 20240719 1141 2538.jpg",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:J%C3%B6kuls%C3%A1rl%C3%B3n_glacier_lagoon,_Iceland,_20240719_1141_2538.jpg"
+  },
+  "kirkjufell": {
+    "file": "Kirkjufellsfoss, Iceland, 20230505 1406 5209.jpg",
+    "artist": "Jakub Hałun",
+    "license": "CC BY-SA 4.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Kirkjufellsfoss,_Iceland,_20230505_1406_5209.jpg"
+  },
+  "bluelagoon": {
+    "file": "Blue Lagoon, Iceland (22360145156).jpg",
+    "artist": "Bryan Ledgard",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Blue_Lagoon,_Iceland_(22360145156).jpg"
+  },
+  "dettifoss": {
+    "file": "Dettifoss_TimBekaert.JPG",
+    "artist": "Tbc",
+    "license": "Public domain",
+    "url": "https://commons.wikimedia.org/wiki/File:Dettifoss_TimBekaert.JPG"
+  },
+  "aurora": {
+    "file": "Aurora Borealis - Iceland - 2 Nov. 2013.jpg",
+    "artist": "Francisco Diez from Toronto, Canada",
+    "license": "CC BY 2.0",
+    "url": "https://commons.wikimedia.org/wiki/File:Aurora_Borealis_-_Iceland_-_2_Nov._2013.jpg"
+  }
+}
