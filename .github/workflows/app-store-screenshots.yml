@@ -1,0 +1,116 @@
+name: App Store Screenshots
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  screenshots:
+    runs-on: xcode-27
+    timeout-minutes: 60
+    env:
+      DEVICE_NAME: iPhone 18 Pro Max
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode 27
+        run: |
+          sudo xcode-select -s /Applications/Xcode_27.app
+          xcodebuild -version
+          xcrun simctl list runtimes
+          xcrun simctl list devices available | grep -i iphone
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Download Iceland photos from Wikimedia Commons
+        run: python3 scripts/fetch_photos.py
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Boot iPhone 18 Pro Max simulator
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c '
+          import json, os, sys
+          name = os.environ["DEVICE_NAME"]
+          devices = json.load(sys.stdin)["devices"]
+          matches = [(rt, d["udid"]) for rt, ds in devices.items() if "iOS" in rt for d in ds if d["name"] == name]
+          matches.sort()
+          print(matches[-1][1] if matches else "")
+          ')
+          if [ -z "$UDID" ]; then
+            RUNTIME=$(xcrun simctl list runtimes -j | python3 -c 'import json,sys; r=[x for x in json.load(sys.stdin)["runtimes"] if x["platform"]=="iOS" and x["isAvailable"]]; print(r[-1]["identifier"])')
+            UDID=$(xcrun simctl create "$DEVICE_NAME" "$DEVICE_NAME" "$RUNTIME")
+          fi
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl ui "$UDID" appearance light
+          xcrun simctl status_bar "$UDID" override --time "9:41" --dataNetwork wifi --wifiMode active --wifiBars 3 \
+            --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
+          xcrun simctl list devices | grep "$UDID"
+
+      - name: Build app and UI tests
+        run: |
+          xcodebuild build-for-testing \
+            -project IcelandApp.xcodeproj \
+            -scheme IcelandApp \
+            -destination "id=$UDID" \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || { grep -E "error:" build.log | head -50; tail -80 build.log; exit 1; }
+          grep -E "warning:" build.log | sort -u | head -40 || true
+          tail -5 build.log
+
+      - name: Warm up app (first launch)
+        run: |
+          APP=$(find build/Build/Products -name "IcelandApp.app" -path "*iphonesimulator*" | head -1)
+          xcrun simctl install "$UDID" "$APP"
+          xcrun simctl launch "$UDID" com.peterpanswift.IcelandApp
+          sleep 8
+          xcrun simctl terminate "$UDID" com.peterpanswift.IcelandApp || true
+
+      - name: Capture screenshots
+        run: |
+          mkdir -p screenshots
+          TEST_RUNNER_SCREENSHOTS_DIR="$PWD/screenshots" xcodebuild test-without-building \
+            -project IcelandApp.xcodeproj \
+            -scheme IcelandApp \
+            -destination "id=$UDID" \
+            -derivedDataPath build \
+            -only-testing:IcelandAppUITests/AppStoreScreenshotsUITests/testCaptureScreenshots \
+            -resultBundlePath screenshots.xcresult \
+            CODE_SIGNING_ALLOWED=NO 2>&1 | tee screenshots-test.log | grep -E "Test Case|error|failed" || true
+          if [ -z "$(ls screenshots/*.png 2>/dev/null)" ]; then
+            xcrun xcresulttool export attachments --path screenshots.xcresult --output-path screenshots-attachments || true
+            find screenshots-attachments -name "*.png" -exec cp {} screenshots/ \; || true
+          fi
+          for f in screenshots/*.png; do echo "$f $(sips -g pixelWidth -g pixelHeight "$f" | tail -2 | awk '{print $2}' | xargs)"; done
+          grep -q "Test Case.*passed" screenshots-test.log
+
+      - name: Upload screenshots artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: |
+            screenshots
+            screenshots-test.log
+
+      - name: Publish screenshots to the screenshots branch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          DEST=$(mktemp -d)
+          cp screenshots/*.png screenshots-test.log "$DEST/" 2>/dev/null || true
+          cd "$DEST"
+          git init -q -b screenshots
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Screenshots for ${GITHUB_SHA} (run ${GITHUB_RUN_ID})"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" screenshots

@@ -109,7 +109,7 @@ private struct HeroHeader: View {
     var body: some View {
         GeometryReader { geo in
             let minY = geo.frame(in: .scrollView).minY
-            PlacePhoto(id: "kirkjufell")
+            PlacePhoto(id: "gullfoss", category: .waterfall)
                 .frame(width: geo.size.width, height: geo.size.height + max(0, minY))
                 .overlay {
                     LinearGradient(
