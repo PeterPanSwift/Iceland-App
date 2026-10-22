@@ -1,0 +1,273 @@
+Command line invocation:
+    /Applications/Xcode_27.app/Contents/Developer/usr/bin/xcodebuild test-without-building -project IcelandApp.xcodeproj -scheme IcelandApp -destination id=15E1A449-9F6E-4170-AA62-EB9899DD4B7C -derivedDataPath build "-only-testing:IcelandAppUITests/AppTourUITests/testAppTour" -resultBundlePath /Users/runner/work/Iceland-App/Iceland-App/recording/tour.xcresult CODE_SIGNING_ALLOWED=NO
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+Writing result bundle at path:
+	/Users/runner/work/Iceland-App/Iceland-App/recording/tour.xcresult
+
+2026-10-22 00:31:46.795735+0000 IcelandAppUITests-Runner[14625:45646] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-22 00:31:56.257.
+Test Suite 'IcelandAppUITests.xctest' started at 2026-10-22 00:31:56.263.
+Test Suite 'AppTourUITests' started at 2026-10-22 00:31:56.264.
+Test Case '-[IcelandAppUITests.AppTourUITests testAppTour]' started.
+    t =     0.00s Start Test at 2026-10-22 00:31:56.267
+2026-10-22 00:31:59.826 xcodebuild[14431:44945] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-22 00:31:59.826 xcodebuild[14431:44945] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.05s Set Up
+    t =     0.06s Open com.peterpanswift.IcelandApp
+    t =     0.06s     Launch com.peterpanswift.IcelandApp
+objc[14625]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.tNWBAI/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x1076b0398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.tNWBAI/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x108078310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     6.48s         Setting up automation session
+    t =    11.56s         Wait for com.peterpanswift.IcelandApp to idle
+    t =    15.08s Waiting 20.0s for "冰與火之國" StaticText to exist
+    t =    16.14s     Checking `Expect predicate `existsNoRetry == 1` for object "冰與火之國" StaticText`
+    t =    16.14s         Checking existence of `"冰與火之國" StaticText`
+TOUR_MARK start=1792629134.121145
+    t =    20.36s Waiting 5.0s for "featuredCarousel" ScrollView to exist
+    t =    21.42s     Checking `Expect predicate `existsNoRetry == 1` for object "featuredCarousel" ScrollView`
+    t =    21.42s         Checking existence of `"featuredCarousel" ScrollView`
+    t =    21.51s Swipe left "featuredCarousel" ScrollView
+    t =    21.51s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    21.51s     Find the "featuredCarousel" ScrollView
+    t =    21.57s     Check for interrupting elements affecting "featuredCarousel" ScrollView
+    t =    21.74s     Synthesize event
+    t =    22.73s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    24.54s Swipe left "featuredCarousel" ScrollView
+    t =    24.54s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    24.54s     Find the "featuredCarousel" ScrollView
+    t =    24.62s     Check for interrupting elements affecting "featuredCarousel" ScrollView
+    t =    24.68s     Synthesize event
+    t =    25.24s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    27.03s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.30] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    27.03s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    27.03s     Find the Window (First Match)
+    t =    27.05s     Check for interrupting elements affecting Window
+    t =    27.11s     Synthesize event
+    t =    27.11s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    27.13s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    27.14s         Find the Window (First Match)
+    t =    27.16s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    27.18s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    28.08s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    31.18s Checking existence of `"category_waterfall" Button`
+    t =    31.71s Find the "category_waterfall" Button
+    t =    32.07s Find the "category_waterfall" Button
+    t =    32.21s Find the Window (First Match)
+    t =    32.22s Waiting 5.0s for "category_waterfall" Button to exist
+    t =    33.25s     Checking `Expect predicate `existsNoRetry == 1` for object "category_waterfall" Button`
+    t =    33.25s         Checking existence of `"category_waterfall" Button`
+    t =    33.44s Find the "category_waterfall" Button
+    t =    33.58s Tap "category_waterfall" Button
+    t =    33.58s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    33.58s     Find the "category_waterfall" Button
+    t =    34.09s     Check for interrupting elements affecting "category_waterfall" Button
+    t =    34.19s     Synthesize event
+    t =    34.52s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    36.18s Checking existence of `"place_skogafoss" Button`
+    t =    37.25s Find the "place_skogafoss" Button
+    t =    37.54s Find the "place_skogafoss" Button
+    t =    38.19s Find the Window (First Match)
+    t =    39.02s Waiting 5.0s for "place_skogafoss" Button to exist
+    t =    40.06s     Checking `Expect predicate `existsNoRetry == 1` for object "place_skogafoss" Button`
+    t =    40.06s         Checking existence of `"place_skogafoss" Button`
+    t =    40.19s Find the "place_skogafoss" Button
+    t =    40.34s Tap "place_skogafoss" Button
+    t =    40.34s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    40.36s     Find the "place_skogafoss" Button
+    t =    40.49s     Check for interrupting elements affecting "place_skogafoss" Button
+    t =    40.56s     Synthesize event
+    t =    40.86s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    44.33s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.32] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    44.33s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    44.33s     Find the Window (First Match)
+    t =    44.37s     Check for interrupting elements affecting Window
+    t =    44.48s     Synthesize event
+    t =    44.48s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    44.52s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    44.60s         Find the Window (First Match)
+    t =    44.66s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    44.75s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    45.64s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    48.19s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.32] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    48.19s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    48.20s     Find the Window (First Match)
+    t =    48.29s     Check for interrupting elements affecting Window
+    t =    48.34s     Synthesize event
+    t =    48.34s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    48.37s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    48.39s         Find the Window (First Match)
+    t =    48.45s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    48.48s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    49.40s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    51.69s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.27] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    51.69s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    51.69s     Find the Window (First Match)
+    t =    51.74s     Check for interrupting elements affecting Window
+    t =    51.80s     Synthesize event
+    t =    51.80s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    51.85s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    51.87s         Find the Window (First Match)
+    t =    51.91s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    51.95s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    52.90s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    54.90s Waiting 5.0s for "favoriteButton" Button to exist
+    t =    55.95s     Checking `Expect predicate `existsNoRetry == 1` for object "favoriteButton" Button`
+    t =    55.95s         Checking existence of `"favoriteButton" Button`
+    t =    56.06s Find the "favoriteButton" Button
+    t =    56.19s Tap "favoriteButton" Button
+    t =    56.19s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    56.20s     Find the "favoriteButton" Button
+    t =    56.32s     Check for interrupting elements affecting "favoriteButton" Button
+    t =    56.36s     Synthesize event
+    t =    56.67s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    59.16s Press Window (First Match)[0.50, 0.25] for 0.1 seconds, then drag to Window (First Match)[0.50, 1.15] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    59.16s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    59.16s     Find the Window (First Match)
+    t =    59.18s     Check for interrupting elements affecting Window
+    t =    59.24s     Synthesize event
+    t =    59.24s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    59.26s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    59.28s         Find the Window (First Match)
+    t =    59.30s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    59.34s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    60.77s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    62.46s Checking existence of `"BackButton" Button`
+    t =    62.53s Tap "BackButton" Button
+    t =    62.53s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    62.54s     Find the "BackButton" Button
+    t =    62.59s     Check for interrupting elements affecting "BackButton" Button
+    t =    62.64s     Synthesize event
+    t =    62.96s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    65.26s Waiting 5.0s for "category_all" Button to exist
+    t =    66.32s     Checking `Expect predicate `existsNoRetry == 1` for object "category_all" Button`
+    t =    66.32s         Checking existence of `"category_all" Button`
+    t =    66.50s Find the "category_all" Button
+    t =    66.72s Tap "category_all" Button
+    t =    66.72s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    66.72s     Find the "category_all" Button
+    t =    66.89s     Check for interrupting elements affecting "category_all" Button
+    t =    66.95s     Synthesize event
+    t =    67.28s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    68.50s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.37] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =    68.50s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    68.51s     Find the Window (First Match)
+    t =    68.54s     Check for interrupting elements affecting Window
+    t =    68.61s     Synthesize event
+    t =    68.61s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    68.65s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    68.66s         Find the Window (First Match)
+    t =    68.68s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    68.71s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =    69.56s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    72.98s Waiting 3.0s for "地圖" Button to exist
+    t =    74.05s     Checking `Expect predicate `existsNoRetry == 1` for object "地圖" Button`
+    t =    74.05s         Checking existence of `"地圖" Button`
+    t =    74.29s Tap "地圖" Button
+    t =    74.29s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    74.30s     Find the "地圖" Button
+    t =    74.64s     Check for interrupting elements affecting "map.fill" Button
+    t =    74.87s     Synthesize event
+    t =    75.21s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    81.74s Waiting 5.0s for "mapcard_jokulsarlon" Button to exist
+    t =    82.77s     Checking `Expect predicate `existsNoRetry == 1` for object "mapcard_jokulsarlon" Button`
+    t =    82.77s         Checking existence of `"mapcard_jokulsarlon" Button`
+    t =    82.88s Find the "mapcard_jokulsarlon" Button
+    t =    82.99s Tap "mapcard_jokulsarlon" Button
+    t =    82.99s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    82.99s     Find the "mapcard_jokulsarlon" Button
+    t =    83.10s     Check for interrupting elements affecting "mapcard_jokulsarlon" Button
+    t =    83.18s     Synthesize event
+    t =    83.49s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    88.02s Waiting 5.0s for "mapcard_kirkjufell" Button to exist
+    t =    89.05s     Checking `Expect predicate `existsNoRetry == 1` for object "mapcard_kirkjufell" Button`
+    t =    89.05s         Checking existence of `"mapcard_kirkjufell" Button`
+    t =    89.21s Find the "mapcard_kirkjufell" Button
+    t =    89.33s Tap "mapcard_kirkjufell" Button
+    t =    89.33s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    89.34s     Find the "mapcard_kirkjufell" Button
+    t =    89.45s     Check for interrupting elements affecting "mapcard_kirkjufell" Button
+    t =    89.53s     Synthesize event
+    t =    89.87s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    94.39s Waiting 5.0s for "mapOverview" Button to exist
+    t =    95.43s     Checking `Expect predicate `existsNoRetry == 1` for object "mapOverview" Button`
+    t =    95.43s         Checking existence of `"mapOverview" Button`
+    t =    95.51s Find the "mapOverview" Button
+    t =    95.63s Tap "mapOverview" Button
+    t =    95.63s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    95.63s     Find the "mapOverview" Button
+    t =    95.71s     Check for interrupting elements affecting "mapOverview" Button
+    t =    95.77s     Synthesize event
+    t =    96.09s     Wait for com.peterpanswift.IcelandApp to idle
+    t =    99.85s Waiting 3.0s for "收藏" Button to exist
+    t =   100.92s     Checking `Expect predicate `existsNoRetry == 1` for object "收藏" Button`
+    t =   100.92s         Checking existence of `"收藏" Button`
+    t =   101.00s Tap "收藏" Button
+    t =   101.00s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   101.01s     Find the "收藏" Button
+    t =   101.10s     Check for interrupting elements affecting "heart.fill" Button
+    t =   101.17s     Synthesize event
+    t =   101.48s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   105.82s Waiting 3.0s for "資訊" Button to exist
+    t =   106.87s     Checking `Expect predicate `existsNoRetry == 1` for object "資訊" Button`
+    t =   106.87s         Checking existence of `"資訊" Button`
+    t =   106.93s Tap "資訊" Button
+    t =   106.93s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   106.93s     Find the "資訊" Button
+    t =   106.97s     Check for interrupting elements affecting "info.circle.fill" Button
+    t =   107.00s     Synthesize event
+    t =   107.30s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   111.72s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.32] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =   111.72s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   111.72s     Find the Window (First Match)
+    t =   111.74s     Check for interrupting elements affecting Window
+    t =   111.82s     Synthesize event
+    t =   111.82s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   111.85s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   111.86s         Find the Window (First Match)
+    t =   111.90s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   111.92s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   112.81s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   116.50s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.32] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =   116.50s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   116.50s     Find the Window (First Match)
+    t =   116.54s     Check for interrupting elements affecting Window
+    t =   116.59s     Synthesize event
+    t =   116.59s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   116.62s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   116.63s         Find the Window (First Match)
+    t =   116.67s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   116.69s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   117.57s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   120.06s Press Window (First Match)[0.50, 0.72] for 0.1 seconds, then drag to Window (First Match)[0.50, 0.22] with velocity of 900.00 pixels per second, and then hold for 0.1 seconds 
+    t =   120.06s     Wait for com.peterpanswift.IcelandApp to idle
+    t =   120.12s     Find the Window (First Match)
+    t =   120.22s     Check for interrupting elements affecting Window
+    t =   120.31s     Synthesize event
+    t =   120.31s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   120.34s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   120.36s         Find the Window (First Match)
+    t =   120.43s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   120.47s         Find the Window at {{0.0, 0.0}, {440.0, 956.0}}
+    t =   121.48s     Wait for com.peterpanswift.IcelandApp to idle
+TOUR_MARK end=1792629240.2442741
+    t =   123.99s Tear Down
+Test Case '-[IcelandAppUITests.AppTourUITests testAppTour]' passed (124.953 seconds).
+Test Suite 'AppTourUITests' passed at 2026-10-22 00:34:01.221.
+	 Executed 1 test, with 0 failures (0 unexpected) in 124.953 (124.957) seconds
+Test Suite 'IcelandAppUITests.xctest' passed at 2026-10-22 00:34:01.221.
+	 Executed 1 test, with 0 failures (0 unexpected) in 124.953 (124.958) seconds
+Test Suite 'Selected tests' passed at 2026-10-22 00:34:01.222.
+	 Executed 1 test, with 0 failures (0 unexpected) in 124.953 (124.965) seconds
+2026-10-22 00:34:03.017 xcodebuild[14431:44945] [MT] IDETestOperationsObserverDebug: 143.313 elapsed -- Testing started completed.
+2026-10-22 00:34:03.017 xcodebuild[14431:44945] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-22 00:34:03.017 xcodebuild[14431:44945] [MT] IDETestOperationsObserverDebug: 143.313 sec, +143.313 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/Iceland-App/Iceland-App/recording/tour.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started
