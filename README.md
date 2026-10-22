@@ -31,4 +31,4 @@ App 圖示由 `python3 scripts/make_app_icon.py` 繪製（極光下的草帽山�
 開啟 iPhone 18 Pro Max 模擬器，透過 `simctl io recordVideo` 錄下 `AppTourUITests` 的自動操作，
 並將原始影片與時間標記（`marks.json`）推送到 `recordings` 分支。
 
-之後執行 `python3 scripts/edit_video.py <錄影資料夾> demo.mp4`：依時間標記裁掉 App 以外的畫面、縮短靜止等待的片段，並壓縮成 1280p H.264。
+之後執行 `python3 scripts/edit_video.py <錄影資料夾> demo.mp4`：比對主畫面找出 App 啟動與結束的位置、裁掉 App 以外的畫面、縮短靜止等待的片段，並壓縮成 1280p H.264。
