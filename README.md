@@ -23,6 +23,8 @@ open IcelandApp.xcodeproj
 
 需求：Xcode 26 以上，iOS 18 以上。
 
+App 圖示由 `python3 scripts/make_app_icon.py` 繪製（極光下的草帽山），輸出到 `IcelandApp/Assets.xcassets/AppIcon.appiconset/`。
+
 ## 錄製操作影片
 
 `.github/workflows/record-demo.yml` 在 GitHub 的 `xcode-27` runner 上以 Xcode 27 建置 App，
